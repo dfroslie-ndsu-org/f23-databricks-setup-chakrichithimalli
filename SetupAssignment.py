@@ -10,17 +10,16 @@
 
 # You'll need to replace these values with the specifics for your setup.
 
-storage_end_point = "assign1storage.dfs.core.windows.net" 
-my_scope = "MarchMadnessScope"
-my_key = "assign1-key"
+storage_end_point = "chakristorageaccount.dfs.core.windows.net" 
+my_scope = "Chakri-ADB"
+my_key = "ChakriADB-key"
 
 spark.conf.set(
     "fs.azure.account.key." + storage_end_point,
     dbutils.secrets.get(scope=my_scope, key=my_key))
 
 # Replace the container name (assign-1-blob) and storage account name (assign1storage) in the uri.
-uri = "abfss://assign-1-blob@assign1storage.dfs.core.windows.net/"
-
+uri = "abfss://chakricontainer@chakristorageaccount.dfs.core.windows.net/"
 
 # COMMAND ----------
 
